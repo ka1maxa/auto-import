@@ -21,6 +21,7 @@ class Car extends Model
     {
         return $this->hasOne(TechnicalSpecification::class);
     }
+    
     public function photos()
     {
         return $this->hasMany(CarPhoto::class);
