@@ -14,10 +14,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-    Route::get('/cars', [CarController::class, 'index'])->name('admin.car.index');
-    Route::get('/cars/create', [CarController::class, 'create'])->name('admin.car.create');
-    Route::post('/cars', [CarController::class, 'store'])->name('admin.car.store');
-    Route::get('/cars/{car}/edit', [CarController::class, 'edit'])->name('admin.car.edit');
-    Route::put('/cars/{car}', [CarController::class, 'update'])->name('admin.car.update');
-    Route::delete('/cars/{car}', [CarController::class, 'destroy'])->name('admin.car.destroy');
+    Route::get('/cars', [CarController::class, 'index'])->name('admin.cars.index');
+    Route::get('/cars/create', [CarController::class, 'create'])->name('admin.cars.create');
+    Route::post('/cars', [CarController::class, 'store'])->name('admin.cars.store');
+    Route::get('/cars/{car}/edit', [CarController::class, 'edit'])->name('admin.cars.edit');
+    Route::put('/cars/{car}', [CarController::class, 'update'])->name('admin.cars.update');
+    Route::delete('/cars/{car}', [CarController::class, 'destroy'])->name('admin.cars.destroy');
 });
