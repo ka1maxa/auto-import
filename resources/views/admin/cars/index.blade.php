@@ -28,6 +28,13 @@
                     <td>{{ $car->status }}</td>
                     <td>{{ $car->dealer?->name ?? '—' }}</td>
                     <td><a href="{{ route('admin.cars.edit', $car) }}">EDIT</a></td>
+                    <td>
+                        <form method="POST" action="{{ route('admin.cars.destroy', $car) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">DELETE</button>
+                        </form>
+                    </td>
                 </tr>
             @empty
                 <tr>

@@ -55,6 +55,13 @@ class CarController extends Controller
         ]);
         $car->update($data);
 
-        return redirect()->route('admin.cars.index')->with('sussess','ganaxlda');
+        return redirect()->route('admin.cars.index')->with('sucsess','ganaxlda');
+    }
+
+    public function destroy(Car $car)
+    {
+        $car->delete();   
+
+        return redirect()->route('admin.cars.index')->with('sucsess','waishala');
     }
 }
