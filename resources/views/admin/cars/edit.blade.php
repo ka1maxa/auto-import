@@ -5,7 +5,7 @@
 @section('content')
     <h1>EDIT car</h1>
 
-    <form method="POST" action="{{ route('admin.cars.update', $car) }}">
+    <form method="POST"  action="{{ route('admin.cars.update', $car) }}">
         @method('PUT')
         @csrf
 
@@ -45,5 +45,16 @@
         <br>
 
         <button type="submit">EDIT</button>
+
     </form>
+
+    <form method="POST"  action="{{ route('admin.cars.storePhoto', $car) }}" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="photo" accept=".png, .jpg ,">
+
+        <button type="submit">EDIT PHOTOS</button>
+
+    </form>
+
+        
 @endsection

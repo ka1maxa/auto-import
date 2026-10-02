@@ -64,4 +64,16 @@ class CarController extends Controller
 
         return redirect()->route('admin.cars.index')->with('sucsess','waishala');
     }
+    public function storePhoto(Request $request, Car $car)
+    {
+        $data = $request ->validate
+        ([
+            'photo' => 'required|image|max:5120',
+        ]);
+        $path = $request->file('photo')->store('cars', 'public');
+        
+        $car->photos()->create(['path' => $path, 'is_main' => false]);
+
+        return redirect()->route('admin.cars.edit', $car)->with('sucsess','daemata foto');
+    }
 }

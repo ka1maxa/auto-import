@@ -19,5 +19,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::post('/cars', [CarController::class, 'store'])->name('admin.cars.store');
     Route::get('/cars/{car}/edit', [CarController::class, 'edit'])->name('admin.cars.edit');
     Route::put('/cars/{car}', [CarController::class, 'update'])->name('admin.cars.update');
+    Route::post('/cars/{car}/photos',[CarController::class,'storePhoto'])->name('admin.cars.storePhoto');
     Route::delete('/cars/{car}', [CarController::class, 'destroy'])->name('admin.cars.destroy');
 });

@@ -14,6 +14,7 @@
                 <th>წელი</th>
                 <th>ფასი</th>
                 <th>სტატუსი</th>
+                <th>photo</th>
                 <th>დილერი</th>
             </tr>
         </thead>
@@ -26,10 +27,11 @@
                     <td>{{ $car->year }}</td>
                     <td>{{ $car->price }} {{ $car->currency }}</td>
                     <td>{{ $car->status }}</td>
+                    <td>{{ $car->path}}</td>
                     <td>{{ $car->dealer?->name ?? '—' }}</td>
                     <td><a href="{{ route('admin.cars.edit', $car) }}">EDIT</a></td>
                     <td>
-                        <form method="POST" action="{{ route('admin.cars.destroy', $car) }}">
+                        <form method="POST" action="{{ route('admin.cars.destroy', $car )}}">
                             @csrf
                             @method('DELETE')
                             <button type="submit">DELETE</button>
