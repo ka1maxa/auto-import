@@ -27,6 +27,7 @@
                     <td>{{ $car->price }} {{ $car->currency }}</td>
                     <td>{{ $car->status }}</td>
                     <td>{{ $car->dealer?->name ?? '—' }}</td>
+                    <td><a href="{{ route('admin.cars.edit', $car) }}">EDIT</a></td>
                 </tr>
             @empty
                 <tr>
